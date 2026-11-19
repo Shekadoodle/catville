@@ -1,0 +1,233 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Trebuchet MS', sans-serif;
+    background: #243b35;
+    color: white;
+    overflow: hidden;
+}
+
+header {
+    background: #3b6651;
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+h1 {
+    font-size: 20px;
+    margin: 0;
+}
+
+.stats {
+    display: flex;
+    gap: 15px;
+    font-weight: bold;
+}
+
+#game {
+    position: relative;
+    height: calc(100dvh - 60px);
+    width: 100%;
+    overflow: hidden;
+    touch-action: none;
+    background: #85b96a;
+}
+
+#world {
+    position: absolute;
+    width: 1400px;
+    height: 1000px;
+    background-color: #86b96d;
+    background-image: radial-gradient(#709e59 2px, transparent 2px);
+    background-size: 45px 45px;
+    transform-origin: top left;
+}
+
+.path {
+    position: absolute;
+    background: #d8c18c;
+    border: 4px solid #c3a976;
+    border-radius: 30px;
+}
+
+.horizontal {
+    left: 0;
+    top: 470px;
+    width: 1400px;
+    height: 110px;
+}
+
+.vertical {
+    left: 650px;
+    top: 0;
+    width: 110px;
+    height: 1000px;
+}
+
+.house {
+    position: absolute;
+    width: 145px;
+    height: 120px;
+    background: #e9a56e;
+    border: 5px solid #8c553d;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    font-size: 48px;
+    box-shadow: 0 7px #754934;
+}
+
+.house span {
+    font-size: 13px;
+    background: #754934;
+    padding: 3px 9px;
+    border-radius: 8px;
+}
+
+.bakery { left: 150px; top: 160px; }
+.farm { left: 1000px; top: 150px; background: #e5c17d; }
+.town { left: 150px; top: 700px; background: #b6a0db; }
+.cafe { left: 1030px; top: 700px; background: #e6a4a4; }
+
+#player {
+    position: absolute;
+    left: 680px;
+    top: 520px;
+    font-size: 43px;
+    width: 50px;
+    height: 55px;
+    z-index: 10;
+}
+
+.cat {
+    position: absolute;
+    width: 45px;
+    height: 48px;
+    font-size: 37px;
+    z-index: 5;
+    animation: bounce 1s infinite alternate;
+}
+
+@keyframes bounce {
+    to { transform: translateY(-7px); }
+}
+
+.cat-label {
+    position: absolute;
+    top: -18px;
+    font-size: 10px;
+    color: white;
+    background: #514b40;
+    border-radius: 5px;
+    padding: 2px 5px;
+    white-space: nowrap;
+}
+
+#message {
+    position: absolute;
+    z-index: 20;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #344f3b;
+    padding: 10px 18px;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 85%;
+    font-size: 14px;
+}
+
+#toggle {
+    position: absolute;
+    z-index: 40;
+    top: 65px;
+    right: 12px;
+    background: #f4d17c;
+    padding: 10px;
+    border-radius: 8px;
+    border: 2px solid #9b754e;
+}
+
+#collection {
+    position: absolute;
+    z-index: 30;
+    top: 110px;
+    right: 12px;
+    background: #fff4d8;
+    color: #483b30;
+    border: 4px solid #9b754e;
+    border-radius: 12px;
+    padding: 10px;
+    width: 190px;
+    max-height: 50%;
+    overflow-y: auto;
+}
+
+.cat-entry {
+    padding: 6px;
+    font-size: 13px;
+    border-bottom: 1px solid #dac8a7;
+}
+
+#controls {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    z-index: 30;
+    display: grid;
+    grid-template-columns: 48px 48px 48px;
+    grid-template-rows: 48px 48px;
+    gap: 4px;
+}
+
+#controls button {
+    background: #fff1c8;
+    color: #443728;
+    border: 3px solid #a77b4b;
+    border-radius: 12px;
+    font-size: 22px;
+    touch-action: none;
+}
+
+#controls button:nth-child(1) { grid-column: 2; }
+#controls button:nth-child(2) { grid-column: 1; grid-row: 2; }
+#controls button:nth-child(3) { grid-column: 2; grid-row: 2; }
+#controls button:nth-child(4) { grid-column: 3; grid-row: 2; }
+
+#win {
+    display: none;
+    position: absolute;
+    inset: 0;
+    z-index: 50;
+    background: #1c3029ee;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.winbox {
+    background: #fff0c9;
+    color: #473629;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+button {
+    cursor: pointer;
+}
+
+@media(max-width: 600px) {
+    header { padding: 8px; }
+    h1 { font-size: 17px; }
+    .stats { font-size: 12px; gap: 8px; }
+    #collection { width: 145px; }
+}
