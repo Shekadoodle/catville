@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Collector - Village Adventure</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>🐾 Cat Collector</h1>
+    <div class="stats">
+        <span>🐱 Cats: <span id="count">0</span>/10</span>
+        <span>⭐ Coins: <span id="coins">0</span></span>
+    </div>
+</header>
+
+<main id="game">
+    <div id="message">Welcome! Find all the village cats!</div>
+
+    <button id="toggle" onclick="toggleCollection()">
+        📖 Cat Book
+    </button>
+
+    <aside id="collection">
+        <h3>🐾 Cat Collection</h3>
+        <div id="catList"></div>
+    </aside>
+
+    <div id="world">
+
+        <div class="path horizontal"></div>
+        <div class="path vertical"></div>
+
+        <div class="house bakery">🏠<span>Bakery</span></div>
+        <div class="house farm">🏡<span>Farm</span></div>
+        <div class="house town">🏘️<span>Town Hall</span></div>
+        <div class="house cafe">🏠<span>Cat Cafe</span></div>
+
+        <div class="player" id="player">🧑</div>
+        <div id="cats"></div>
+
+    </div>
+
+    <div id="controls">
+        <button data-dir="up">▲</button>
+        <button data-dir="left">◀</button>
+        <button data-dir="down">▼</button>
+        <button data-dir="right">▶</button>
+    </div>
+
+    <div id="win">
+        <div class="winbox">
+            <h1>🏆 Village Cat Master!</h1>
+            <p>You collected every cat!</p>
+            <button onclick="restartGame()">Play Again</button>
+        </div>
+    </div>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
